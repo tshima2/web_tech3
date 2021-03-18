@@ -1,10 +1,12 @@
 $worker  = 2
 $timeout = 30
+
 #自分のアプリケーション名（currentがつくことに注意）
-$app_dir = "/var/www/アプリケーション名/current"
+$app_dir = "/var/www/web_tech2/current"
 $listen  = File.expand_path 'tmp/sockets/unicorn.sock', $app_dir
 $pid     = File.expand_path 'tmp/pids/unicorn.pid', $app_dir
 $std_log = File.expand_path 'log/unicorn.log', $app_dir
+
 # 上記で設定したものが適応されるよう定義
 worker_processes  $worker
 working_directory $app_dir
